@@ -1,0 +1,29 @@
+[2025-11-08T12:40:01.179+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-11-08T12:40:01.210+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: github_events_producer.run_github_producer scheduled__2025-11-08T12:35:00+00:00 [queued]>
+[2025-11-08T12:40:01.216+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: github_events_producer.run_github_producer scheduled__2025-11-08T12:35:00+00:00 [queued]>
+[2025-11-08T12:40:01.217+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 2
+[2025-11-08T12:40:01.226+0000] {taskinstance.py:2330} INFO - Executing <Task(DockerOperator): run_github_producer> on 2025-11-08 12:35:00+00:00
+[2025-11-08T12:40:01.235+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=7301) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-11-08T12:40:01.236+0000] {standard_task_runner.py:63} INFO - Started process 7302 to run task
+[2025-11-08T12:40:01.235+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'github_events_producer', 'run_github_producer', 'scheduled__2025-11-08T12:35:00+00:00', '--job-id', '299', '--raw', '--subdir', 'DAGS_FOLDER/github_events_dag.py', '--cfg-path', '/tmp/tmpzvehv882']
+[2025-11-08T12:40:01.237+0000] {standard_task_runner.py:91} INFO - Job 299: Subtask run_github_producer
+[2025-11-08T12:40:01.296+0000] {task_command.py:426} INFO - Running <TaskInstance: github_events_producer.run_github_producer scheduled__2025-11-08T12:35:00+00:00 [running]> on host 01a27a1b1a7e
+[2025-11-08T12:40:01.387+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='github_events_producer' AIRFLOW_CTX_TASK_ID='run_github_producer' AIRFLOW_CTX_EXECUTION_DATE='2025-11-08T12:35:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-11-08T12:35:00+00:00'
+[2025-11-08T12:40:01.388+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-11-08T12:40:01.462+0000] {docker.py:366} INFO - Starting docker container from image github_producer:latest
+[2025-11-08T12:40:01.468+0000] {docker.py:374} WARNING - Using remote engine or docker-in-docker and mounting temporary volume from host is not supported. Falling back to `mount_tmp_dir=False` mode. You can set `mount_tmp_dir` parameter to False to disable mounting and remove the warning
+[2025-11-08T12:40:02.095+0000] {docker.py:436} INFO - INFO:kafka.conn:<BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('172.18.0.5', 9092)]>: connecting to kafka:9092 [('172.18.0.5', 9092) IPv4]
+[2025-11-08T12:40:02.099+0000] {docker.py:436} INFO - INFO:kafka.conn:<BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=kafka:9092 <checking_api_versions_recv> [IPv4 ('172.18.0.5', 9092)]>: Broker version identified as 2.6
+[2025-11-08T12:40:02.100+0000] {docker.py:436} INFO - INFO:kafka.conn:<BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('172.18.0.5', 9092)]>: Connection complete.
+[2025-11-08T12:40:02.100+0000] {docker.py:436} INFO - INFO:__main__:Produtor Kafka conectado com sucesso.
+[2025-11-08T12:40:02.797+0000] {docker.py:436} INFO - INFO:kafka.conn:<BrokerConnection client_id=kafka-python-producer-1, node_id=1 host=kafka:9092 <connecting> [IPv4 ('172.18.0.5', 9092)]>: connecting to kafka:9092 [('172.18.0.5', 9092) IPv4]
+[2025-11-08T12:40:02.798+0000] {docker.py:436} INFO - INFO:kafka.conn:<BrokerConnection client_id=kafka-python-producer-1, node_id=1 host=kafka:9092 <connected> [IPv4 ('172.18.0.5', 9092)]>: Connection complete.
+INFO:kafka.conn:<BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('172.18.0.5', 9092)]>: Closing connection.
+[2025-11-08T12:40:02.810+0000] {docker.py:436} INFO - INFO:__main__:Produtor: 30 eventos enviados para o tópico 'github_events_raw'.
+INFO:kafka.producer.kafka:<KafkaProducer client_id=kafka-python-producer-1 transactional_id=None>: Closing the Kafka producer with 9223372036.0 secs timeout.
+[2025-11-08T12:40:02.811+0000] {docker.py:436} INFO - INFO:kafka.conn:<BrokerConnection client_id=kafka-python-producer-1, node_id=1 host=kafka:9092 <connected> [IPv4 ('172.18.0.5', 9092)]>: Closing connection.
+[2025-11-08T12:40:03.036+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-11-08T12:40:03.061+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=github_events_producer, task_id=run_github_producer, run_id=scheduled__2025-11-08T12:35:00+00:00, execution_date=20251108T123500, start_date=20251108T124001, end_date=20251108T124003
+[2025-11-08T12:40:03.097+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2025-11-08T12:40:03.111+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-11-08T12:40:03.113+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

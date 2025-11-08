@@ -1,0 +1,42 @@
+[2025-11-08T00:30:01.024+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-11-08T00:30:01.056+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: github_events_producer.run_github_producer scheduled__2025-11-08T00:20:00+00:00 [queued]>
+[2025-11-08T00:30:01.065+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: github_events_producer.run_github_producer scheduled__2025-11-08T00:20:00+00:00 [queued]>
+[2025-11-08T00:30:01.066+0000] {taskinstance.py:2306} INFO - Starting attempt 2 of 2
+[2025-11-08T00:30:01.076+0000] {taskinstance.py:2330} INFO - Executing <Task(DockerOperator): run_github_producer> on 2025-11-08 00:20:00+00:00
+[2025-11-08T00:30:01.084+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'github_events_producer', 'run_github_producer', 'scheduled__2025-11-08T00:20:00+00:00', '--job-id', '124', '--raw', '--subdir', 'DAGS_FOLDER/github_events_dag.py', '--cfg-path', '/tmp/tmpighpsgrt']
+[2025-11-08T00:30:01.087+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=245) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-11-08T00:30:01.087+0000] {standard_task_runner.py:91} INFO - Job 124: Subtask run_github_producer
+[2025-11-08T00:30:01.088+0000] {standard_task_runner.py:63} INFO - Started process 247 to run task
+[2025-11-08T00:30:01.151+0000] {task_command.py:426} INFO - Running <TaskInstance: github_events_producer.run_github_producer scheduled__2025-11-08T00:20:00+00:00 [running]> on host 2659da098625
+[2025-11-08T00:30:01.231+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='github_events_producer' AIRFLOW_CTX_TASK_ID='run_github_producer' AIRFLOW_CTX_EXECUTION_DATE='2025-11-08T00:20:00+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-11-08T00:20:00+00:00'
+[2025-11-08T00:30:01.232+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-11-08T00:30:01.252+0000] {docker.py:157} ERROR - Failed to establish connection to Docker host unix://var/run/docker.sock: Error while fetching server API version: ('Connection aborted.', PermissionError(13, 'Permission denied'))
+[2025-11-08T00:30:01.252+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-11-08T00:30:01.261+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 401, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/providers/docker/operators/docker.py", line 492, in execute
+    if self.force_pull or not self.cli.images(name=self.image):
+                              ^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/providers/docker/operators/docker.py", line 362, in cli
+    return self.hook.api_client
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/functools.py", line 995, in __get__
+    val = self.func(instance)
+          ^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/providers/docker/hooks/docker.py", line 161, in api_client
+    raise AirflowException("Failed to establish connection to any given Docker hosts.")
+airflow.exceptions.AirflowException: Failed to establish connection to any given Docker hosts.
+[2025-11-08T00:30:01.266+0000] {taskinstance.py:1206} INFO - Marking task as FAILED. dag_id=github_events_producer, task_id=run_github_producer, run_id=scheduled__2025-11-08T00:20:00+00:00, execution_date=20251108T002000, start_date=20251108T003001, end_date=20251108T003001
+[2025-11-08T00:30:01.274+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 124 for task run_github_producer (Failed to establish connection to any given Docker hosts.; 247)
+[2025-11-08T00:30:01.302+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2025-11-08T00:30:01.318+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-11-08T00:30:01.320+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

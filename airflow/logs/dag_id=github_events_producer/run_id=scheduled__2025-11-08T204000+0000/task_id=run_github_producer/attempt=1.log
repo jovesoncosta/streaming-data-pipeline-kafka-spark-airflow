@@ -1,0 +1,40 @@
+[2025-11-08T20:45:00.433+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-11-08T20:45:00.461+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: github_events_producer.run_github_producer scheduled__2025-11-08T20:40:00+00:00 [queued]>
+[2025-11-08T20:45:00.468+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: github_events_producer.run_github_producer scheduled__2025-11-08T20:40:00+00:00 [queued]>
+[2025-11-08T20:45:00.469+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 2
+[2025-11-08T20:45:00.480+0000] {taskinstance.py:2330} INFO - Executing <Task(DockerOperator): run_github_producer> on 2025-11-08 20:40:00+00:00
+[2025-11-08T20:45:00.488+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'github_events_producer', 'run_github_producer', 'scheduled__2025-11-08T20:40:00+00:00', '--job-id', '407', '--raw', '--subdir', 'DAGS_FOLDER/github_events_dag.py', '--cfg-path', '/tmp/tmp_g_h41vz']
+[2025-11-08T20:45:00.490+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=198) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-11-08T20:45:00.491+0000] {standard_task_runner.py:91} INFO - Job 407: Subtask run_github_producer
+[2025-11-08T20:45:00.491+0000] {standard_task_runner.py:63} INFO - Started process 199 to run task
+[2025-11-08T20:45:00.550+0000] {task_command.py:426} INFO - Running <TaskInstance: github_events_producer.run_github_producer scheduled__2025-11-08T20:40:00+00:00 [running]> on host 94808e560f36
+[2025-11-08T20:45:00.643+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='github_events_producer' AIRFLOW_CTX_TASK_ID='run_github_producer' AIRFLOW_CTX_EXECUTION_DATE='2025-11-08T20:40:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-11-08T20:40:00+00:00'
+[2025-11-08T20:45:00.644+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-11-08T20:45:00.728+0000] {docker.py:366} INFO - Starting docker container from image github_producer:latest
+[2025-11-08T20:45:00.735+0000] {docker.py:374} WARNING - Using remote engine or docker-in-docker and mounting temporary volume from host is not supported. Falling back to `mount_tmp_dir=False` mode. You can set `mount_tmp_dir` parameter to False to disable mounting and remove the warning
+[2025-11-08T20:45:05.183+0000] {docker.py:436} INFO - WARNING:kafka.conn:DNS lookup failed for kafka:9092, exception was [Errno -5] No address associated with hostname. Is your advertised.listeners (called advertised.host.name before Kafka 9) correct and resolvable?
+ERROR:kafka.conn:<BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=kafka:9092 <connecting> [unspecified None]>: DNS lookup failed for kafka:9092 (AddressFamily.AF_UNSPEC)
+[2025-11-08T20:45:05.184+0000] {docker.py:436} INFO - ERROR:kafka.conn:<BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=kafka:9092 <connecting> [unspecified None]>: Closing connection. KafkaConnectionError: DNS failure
+[2025-11-08T20:45:05.184+0000] {docker.py:436} INFO - WARNING:__main__:Não foi possível conectar ao Kafka: NoBrokersAvailable. Tentando novamente em 10s...
+[2025-11-08T20:45:19.189+0000] {docker.py:436} INFO - WARNING:kafka.conn:DNS lookup failed for kafka:9092, exception was [Errno -5] No address associated with hostname. Is your advertised.listeners (called advertised.host.name before Kafka 9) correct and resolvable?
+ERROR:kafka.conn:<BrokerConnection client_id=kafka-python-producer-2, node_id=bootstrap-0 host=kafka:9092 <connecting> [unspecified None]>: DNS lookup failed for kafka:9092 (AddressFamily.AF_UNSPEC)
+[2025-11-08T20:45:19.190+0000] {docker.py:436} INFO - ERROR:kafka.conn:<BrokerConnection client_id=kafka-python-producer-2, node_id=bootstrap-0 host=kafka:9092 <connecting> [unspecified None]>: Closing connection. KafkaConnectionError: DNS failure
+[2025-11-08T20:45:19.190+0000] {docker.py:436} INFO - WARNING:__main__:Não foi possível conectar ao Kafka: NoBrokersAvailable. Tentando novamente em 10s...
+[2025-11-08T20:45:33.202+0000] {docker.py:436} INFO - WARNING:kafka.conn:DNS lookup failed for kafka:9092, exception was [Errno -5] No address associated with hostname. Is your advertised.listeners (called advertised.host.name before Kafka 9) correct and resolvable?
+ERROR:kafka.conn:<BrokerConnection client_id=kafka-python-producer-3, node_id=bootstrap-0 host=kafka:9092 <connecting> [unspecified None]>: DNS lookup failed for kafka:9092 (AddressFamily.AF_UNSPEC)
+ERROR:kafka.conn:<BrokerConnection client_id=kafka-python-producer-3, node_id=bootstrap-0 host=kafka:9092 <connecting> [unspecified None]>: Closing connection. KafkaConnectionError: DNS failure
+[2025-11-08T20:45:33.202+0000] {docker.py:436} INFO - WARNING:__main__:Não foi possível conectar ao Kafka: NoBrokersAvailable. Tentando novamente em 10s...
+[2025-11-08T20:45:47.215+0000] {docker.py:436} INFO - WARNING:kafka.conn:DNS lookup failed for kafka:9092, exception was [Errno -5] No address associated with hostname. Is your advertised.listeners (called advertised.host.name before Kafka 9) correct and resolvable?
+ERROR:kafka.conn:<BrokerConnection client_id=kafka-python-producer-4, node_id=bootstrap-0 host=kafka:9092 <connecting> [unspecified None]>: DNS lookup failed for kafka:9092 (AddressFamily.AF_UNSPEC)
+[2025-11-08T20:45:47.216+0000] {docker.py:436} INFO - ERROR:kafka.conn:<BrokerConnection client_id=kafka-python-producer-4, node_id=bootstrap-0 host=kafka:9092 <connecting> [unspecified None]>: Closing connection. KafkaConnectionError: DNS failure
+[2025-11-08T20:45:47.216+0000] {docker.py:436} INFO - WARNING:__main__:Não foi possível conectar ao Kafka: NoBrokersAvailable. Tentando novamente em 10s...
+[2025-11-08T20:46:01.226+0000] {docker.py:436} INFO - WARNING:kafka.conn:DNS lookup failed for kafka:9092, exception was [Errno -5] No address associated with hostname. Is your advertised.listeners (called advertised.host.name before Kafka 9) correct and resolvable?
+ERROR:kafka.conn:<BrokerConnection client_id=kafka-python-producer-5, node_id=bootstrap-0 host=kafka:9092 <connecting> [unspecified None]>: DNS lookup failed for kafka:9092 (AddressFamily.AF_UNSPEC)
+ERROR:kafka.conn:<BrokerConnection client_id=kafka-python-producer-5, node_id=bootstrap-0 host=kafka:9092 <connecting> [unspecified None]>: Closing connection. KafkaConnectionError: DNS failure
+[2025-11-08T20:46:01.227+0000] {docker.py:436} INFO - WARNING:__main__:Não foi possível conectar ao Kafka: NoBrokersAvailable. Tentando novamente em 10s...
+[2025-11-08T20:46:11.237+0000] {docker.py:436} INFO - ERROR:__main__:Não foi possível conectar ao Kafka após várias tentativas.
+[2025-11-08T20:46:11.458+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-11-08T20:46:11.489+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=github_events_producer, task_id=run_github_producer, run_id=scheduled__2025-11-08T20:40:00+00:00, execution_date=20251108T204000, start_date=20251108T204500, end_date=20251108T204611
+[2025-11-08T20:46:11.513+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2025-11-08T20:46:11.533+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-11-08T20:46:11.535+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

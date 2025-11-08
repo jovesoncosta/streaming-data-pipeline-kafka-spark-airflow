@@ -1,0 +1,16 @@
+# --- Arquivos de Ambiente e Segredos ---
+.env
+
+# --- Pastas de Dados e Logs ---
+spark/data/processed/
+spark/data/checkpoints/
+airflow/logs/
+
+# --- Arquivos do Python ---
+.venv/
+venv/
+__pycache__/
+
+# --- Arquivos do Docker e Sistema ---
+.DS_Store
+*.log

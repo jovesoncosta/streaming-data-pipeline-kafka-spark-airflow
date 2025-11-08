@@ -1,0 +1,2 @@
+v1
+{"path":"file:///opt/spark/work-dir/data/processed/events/year=2025/month=11/day=8/part-00000-999acef2-7e2b-4ba4-87a4-4bf65a35103c.c000.snappy.parquet","size":3573,"isDir":false,"modificationTime":1762631946020,"blockReplication":1,"blockSize":33554432,"action":"add"}
