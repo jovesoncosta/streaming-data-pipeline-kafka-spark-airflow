@@ -1,4 +1,4 @@
-🚀 Project: "GitHub" - Real-Time Event Pipeline
+#🚀 Project: "GitHub" - Real-Time Event Pipeline
 Date: November 2025
 
 🎯 Objective
