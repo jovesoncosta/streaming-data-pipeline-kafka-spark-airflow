@@ -1,12 +1,15 @@
-#🚀 Project: "GitHub" - Real-Time Event Pipeline
+🚀 Project: "GitHub" - Real-Time Event Pipeline
+
 Date: November 2025
 
 🎯 Objective
+
 This project implements an end-to-end streaming data pipeline that captures, processes, and stores public events from the GitHub API in real-time. The objective is to demonstrate a robust, scalable, and fault-tolerant architecture built with industry-standard open-source tools, orchestrated with Docker.
 
 Data is processed and stored in a Data Lake in Parquet format, ready for analysis.
 
 🏛️ Solution Architecture
+
 This architecture uses a decoupled streaming flow where Kafka acts as a central "buffer" (or queue) to ensure fault tolerance. All services are orchestrated via Docker Compose for easy execution and portability. The data flows in real-time from the source (GitHub API) to the aggregated Data Lake, ready for analysis.
 
 The flow works in 6 steps:
@@ -28,7 +31,6 @@ It "flattens" the nested JSON structures (e.g., actor.login, repo.name).
 It creates partitioning columns (year, month, day).
 
 Loading (DataLake): The clean, transformed data is saved in Parquet format to a local volume, partitioned by date.
-
 
 📁 Project Structure
 
