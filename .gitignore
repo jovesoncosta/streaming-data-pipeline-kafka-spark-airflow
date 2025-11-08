@@ -1,0 +1,13 @@
+﻿# Arquivos de Ambiente
+.env
+
+# Pastas de Dados
+spark/data/processed/
+spark/data/checkpoints/
+airflow/logs/
+
+# Python
+.venv/
+venv/
+__pycache__/
+*.log
