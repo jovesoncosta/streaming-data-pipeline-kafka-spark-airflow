@@ -138,7 +138,6 @@ echo "AIRFLOW_UID=50000" > .env
 
 *(The GITHUB_TOKEN will be configured in the Airflow UI for better security.)*
 
-<img width="555" height="260" alt="ENV" src="https://github.com/user-attachments/assets/96ab5e16-bbd2-475f-a64a-48a3757fbe86" />
 
 Next, build the Docker image that Airflow will use to run the producer:
 
